@@ -55,7 +55,7 @@ class VisitSDJpaServiceTest {
         when(visitRepository.save(visit)).thenReturn(visit);
         Visit saved = visitSDJpaService.save(visit);
         assertThat(saved).isNotNull();
-        verify(visitRepository, times(1)).save(visit);
+        verify(visitRepository, times(1)).save(any(Visit.class));
     }
 
     @Test
