@@ -31,12 +31,13 @@ class VisitSDJpaServiceTest {
 
     @Test
     public void findAllTest(){
-        Set<Visit> visits = new HashSet<Visit>();
+       Set<Visit> visits = new HashSet<Visit>();
         visits.add(new Visit());
         visits.add(new Visit());
         when (visitRepository.findAll()).thenReturn(visits);
         Set<Visit> found= visitSDJpaService.findAll();
         assertEquals(2, found.size());
+
         verify(visitRepository, times(1)).findAll();
     }
 
